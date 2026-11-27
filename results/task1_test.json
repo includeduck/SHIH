@@ -1,0 +1,32 @@
+{
+  "Baseline": {
+    "test_accuracy": 0.6088888888888889,
+    "test_macro_f1": 0.3784530386740331,
+    "test_macro_precision": 0.30444444444444446,
+    "test_macro_recall": 0.5,
+    "villain_recall": 0.0,
+    "train_macro_f1": 0.39095744680851063,
+    "cv_macro_f1": 0.3909563265934743,
+    "best_settings": "strategy=most_frequent (no search)"
+  },
+  "Decision Tree": {
+    "test_accuracy": 0.56,
+    "test_macro_f1": 0.4080363549390098,
+    "test_macro_precision": 0.42746448557899264,
+    "test_macro_recall": 0.4720471134704711,
+    "villain_recall": 0.06818181818181818,
+    "train_macro_f1": 0.5627978891465834,
+    "cv_macro_f1": 0.5404795161435055,
+    "best_settings": "max_depth=5, min_samples_leaf=10"
+  },
+  "KNN": {
+    "test_accuracy": 0.5733333333333334,
+    "test_macro_f1": 0.5261495261495261,
+    "test_macro_precision": 0.5341623785020011,
+    "test_macro_recall": 0.5297362309223623,
+    "villain_recall": 0.32954545454545453,
+    "train_macro_f1": 0.7394351915745576,
+    "cv_macro_f1": 0.5172861169629815,
+    "best_settings": "n_neighbors=3, weights=uniform"
+  }
+}

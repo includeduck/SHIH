@@ -6,6 +6,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.colors import LinearSegmentedColormap
 from sklearn.metrics import confusion_matrix
 
 HERO = "#1F5FBF"      # Good / Hero
@@ -33,18 +34,22 @@ CM_LABELS = ["Good (Hero)", "Bad (Villain)"]
 FIG_DIR = Path("figures")
 
 
-def plot_confusion(y_true, y_pred, title: str, ax=None, cmap: str = "Blues"):
+def plot_confusion(y_true, y_pred, title: str, ax=None, cmap="Blues", color: str | None = None):
     """Confusion matrix in the brief's format: rows = actual, columns = predicted,
-    order Good (Hero) then Bad (Villain), count in every cell."""
+    order Good (Hero) then Bad (Villain), count in every cell.
+    Pass color=MODEL_COLORS[name] to shade the cells in that model's colour."""
     cm = confusion_matrix(y_true, y_pred, labels=[0, 1])
+    if color is not None:
+        cmap = LinearSegmentedColormap.from_list("model", ["#FFFFFF", color])
     if ax is None:
         _, ax = plt.subplots(figsize=(4.6, 4))
-    im = ax.imshow(cm, cmap=cmap)
-    thresh = cm.max() / 2 if cm.max() else 0
+    im = ax.imshow(cm, cmap=cmap, vmin=0)
     for i in range(2):
         for j in range(2):
+            r, g, b, _ = im.cmap(im.norm(cm[i, j]))
+            dark_cell = 0.299 * r + 0.587 * g + 0.114 * b < 0.55
             ax.text(j, i, f"{cm[i, j]}", ha="center", va="center", fontsize=14,
-                    color="white" if cm[i, j] > thresh else "black")
+                    color="white" if dark_cell else "black")
     ax.set_xticks([0, 1], CM_LABELS)
     ax.set_yticks([0, 1], CM_LABELS)
     ax.set_xlabel("Predicted class")
