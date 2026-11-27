@@ -187,7 +187,13 @@ Deliverables
 
 ## 7. Integration & submission — **Wasay** — Fri 4 – Sat 5 Dec
 
-1. Merge Rayyan's PR. Assemble `superhero_project.ipynb` in order: Section 2 → Task 1 → Task 2 → Task 3 → final ranking. Inline `src/prep.py` / `src/style.py` code into the notebook (one self-contained file) or keep the import — whichever the instructor prefers.
+1. Merge Rayyan's PR, then rebuild the deliverables (WSL, from the repo root, venv active):
+   ```bash
+   python tools/build_final.py        # assembles superhero_project.ipynb (src/ code inlined, Task 2 slotted in)
+   jupyter nbconvert --to notebook --execute --inplace superhero_project.ipynb
+   jupyter nbconvert --to html --no-input --output-dir report --output superhero_report superhero_project.ipynb
+   ```
+   Then print `report/superhero_report.html` to `report/superhero_report.pdf` (browser → Print → Save as PDF, or headless Edge `--print-to-pdf`). Until Task 2 lands, the build inserts a marked placeholder for Section 4.
 2. **Restart & Run All** from a fresh kernel; confirm all G1–G16 / T1–T11 render, numbering and colours match the brief, every figure has its caption.
 3. Report (`report/`): Q1–Q12 with numbers quoted, all tables/figures, team names + roll numbers. Export PDF.
 4. Final checklist pass (section 0 above) — especially: no `overall_score`, no fit on test, test opened once, alignment unseen by clustering.
