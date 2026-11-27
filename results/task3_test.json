@@ -1,0 +1,16 @@
+{
+  "Network A": {
+    "test_accuracy": 0.6177777777777778,
+    "test_macro_f1": 0.454868154158215,
+    "villain_recall": 0.09090909090909091,
+    "best_epoch": 151,
+    "train_macro_f1": 0.4943816558070727
+  },
+  "Network B": {
+    "test_accuracy": 0.6,
+    "test_macro_f1": 0.42142857142857143,
+    "villain_recall": 0.056818181818181816,
+    "best_epoch": 57,
+    "train_macro_f1": 0.4852087114337568
+  }
+}
