@@ -2,7 +2,7 @@
 
 **Assignment 03 · Machine Learning Project** — "Can six ability scores tell a hero from a villain?"
 **Due:** Sunday **06 Dec 2026, 11:59 PM** (5 min late = −10%, ≤1 h = −20%, ≤12 h = −50%, >12 h = 0).
-**Team:** Muhammad Wasay Tariq (24I-3071, `includeduck`) · Syed Muhammad Rayyan Hassan (`rayyanhasan899`)
+**Team:** Muhammad Wasay Tariq (24I-3071, `includeduck`) · Syed Muhammad Rayyan Hassan (24I-3000, `rayyanhasan899`)
 **Repo:** https://github.com/includeduck/SHIH
 
 | Section | Marks | Owner |
@@ -187,11 +187,17 @@ Deliverables
 
 ## 7. Integration & submission — **Wasay** — Fri 4 – Sat 5 Dec
 
-1. Merge Rayyan's PR. Assemble `superhero_project.ipynb` in order: Section 2 → Task 1 → Task 2 → Task 3 → final ranking. Inline `src/prep.py` / `src/style.py` code into the notebook (one self-contained file) or keep the import — whichever the instructor prefers.
+1. Merge Rayyan's PR, then rebuild the deliverables (WSL, from the repo root, venv active):
+   ```bash
+   python tools/build_final.py        # assembles superhero_project.ipynb (src/ code inlined, Task 2 slotted in)
+   jupyter nbconvert --to notebook --execute --inplace superhero_project.ipynb
+   jupyter nbconvert --to html --no-input --output-dir report --output superhero_report superhero_project.ipynb
+   ```
+   Then print `report/superhero_report.html` to `report/superhero_report.pdf` (browser → Print → Save as PDF, or headless Edge `--print-to-pdf`). Until Task 2 lands, the build inserts a marked placeholder for Section 4.
 2. **Restart & Run All** from a fresh kernel; confirm all G1–G16 / T1–T11 render, numbering and colours match the brief, every figure has its caption.
 3. Report (`report/`): Q1–Q12 with numbers quoted, all tables/figures, team names + roll numbers. Export PDF.
 4. Final checklist pass (section 0 above) — especially: no `overall_score`, no fit on test, test opened once, alignment unseen by clustering.
-5. Zip as `24I-3071_<partner-roll>_Assignment03.zip` (notebook + `data/` + report PDF + G12 image) and submit **by Sat 5 Dec night** — one day of buffer before the 6 Dec 11:59 PM deadline.
+5. Zip as `24I-3071_24I-3000_Assignment03.zip` (notebook + `data/` + report PDF + G12 image) and submit **by Sat 5 Dec night** — one day of buffer before the 6 Dec 11:59 PM deadline.
 
 ## 8. Timeline
 
