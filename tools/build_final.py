@@ -33,7 +33,7 @@ SECTIONS = [
 
 TEAM = [
     ("Muhammad Wasay Tariq", "24I-3071"),
-    ("Syed Muhammad Rayyan Hassan", "roll no. TBD"),
+    ("Syed Muhammad Rayyan Hassan", "24I-3000"),
 ]
 
 md, code = nbf.v4.new_markdown_cell, nbf.v4.new_code_cell

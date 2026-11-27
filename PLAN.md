@@ -2,7 +2,7 @@
 
 **Assignment 03 · Machine Learning Project** — "Can six ability scores tell a hero from a villain?"
 **Due:** Sunday **06 Dec 2026, 11:59 PM** (5 min late = −10%, ≤1 h = −20%, ≤12 h = −50%, >12 h = 0).
-**Team:** Muhammad Wasay Tariq (24I-3071, `includeduck`) · Syed Muhammad Rayyan Hassan (`rayyanhasan899`)
+**Team:** Muhammad Wasay Tariq (24I-3071, `includeduck`) · Syed Muhammad Rayyan Hassan (24I-3000, `rayyanhasan899`)
 **Repo:** https://github.com/includeduck/SHIH
 
 | Section | Marks | Owner |
@@ -197,7 +197,7 @@ Deliverables
 2. **Restart & Run All** from a fresh kernel; confirm all G1–G16 / T1–T11 render, numbering and colours match the brief, every figure has its caption.
 3. Report (`report/`): Q1–Q12 with numbers quoted, all tables/figures, team names + roll numbers. Export PDF.
 4. Final checklist pass (section 0 above) — especially: no `overall_score`, no fit on test, test opened once, alignment unseen by clustering.
-5. Zip as `24I-3071_<partner-roll>_Assignment03.zip` (notebook + `data/` + report PDF + G12 image) and submit **by Sat 5 Dec night** — one day of buffer before the 6 Dec 11:59 PM deadline.
+5. Zip as `24I-3071_24I-3000_Assignment03.zip` (notebook + `data/` + report PDF + G12 image) and submit **by Sat 5 Dec night** — one day of buffer before the 6 Dec 11:59 PM deadline.
 
 ## 8. Timeline
 
